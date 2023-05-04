@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply min-h-full;
+  }
+
+  body {
+    @apply flex min-h-screen flex-col font-sans text-black;
+  }
+
+  @layer components {
+  }
+  .h1 {
+    @apply text-5xl font-medium leading-none;
+  }
+  .h2 {
+    @apply text-[2.5rem] font-medium leading-[1.2em] tracking-wider;
+  }
+  .h3 {
+    @apply text-xl font-medium uppercase leading-[1.3em] tracking-[0.25em];
+  }
+  .button {
+    @apply inline-block rounded-lg px-6 py-4 text-[0.9375rem] font-medium uppercase tracking-wider transition-all duration-150 ease-out focus-within:shadow-[20px_-40px_80px_rgba(93,2,2,0.5)]  hover:shadow-[5px_-10px_80px_rgba(93,2,2,0.5)];
+  }
+  .button.light {
+    @apply bg-peach text-white;
+  }
+
+  .button.light:not(button:disabled) {
+    @apply focus-within:bg-light-peach hover:bg-light-peach;
+  }
+  .button.dark {
+    @apply bg-white text-black;
+  }
+
+  .button.dark:not(button:disabled) {
+    @apply focus-within:bg-light-peach hover:bg-light-peach hover:text-white;
+  }
+
+  .button.dark:disabled {
+    @apply bg-transparent text-white;
+  }
+
+  .navWrapper {
+    @apply h-full mdmax:absolute mdmax:inset-x-0 mdmax:top-[98px] mdmax:bottom-0 mdmax:h-screen mdmax:w-full mdmax:bg-black mdmax:bg-opacity-75;
+  }
+
+  .nav {
+    @apply flex gap-8 text-2xl tracking-[0.08em] md:flex md:flex-row md:gap-10 md:bg-transparent md:text-sm md:tracking-widest mdmax:flex-col mdmax:bg-black mdmax:px-6 mdmax:py-12 mdmax:text-white;
+  }
+
+  .mobileNavList {
+    @apply flex flex-col gap-8 bg-black px-6 py-12 text-2xl tracking-[0.08em] text-white;
+  }
+
+  .largeNavList {
+    @apply flex flex-row gap-2 bg-transparent text-sm tracking-widest;
+  }
+
+  .footerNavItem {
+    @apply text-sm uppercase leading-none tracking-[0.15em] transition-all duration-150 ease-out focus-within:text-light-peach hover:text-light-peach;
+  }
+
+  .footerSocialIcon {
+    @apply fill-peach transition-all duration-150 ease-out hover:fill-light-peach;
+  }
+}
+
+@layer utils {
+  .wrapper {
+    @apply mx-auto max-w-[1111px] py-9 md:py-16 mdmax:px-6;
+  }
+
+  .pageWrapper {
+    @apply mx-auto max-w-[1111px];
+  }
+
+  .error {
+    @apply bg-red-500 text-red-600;
+  }
+}
